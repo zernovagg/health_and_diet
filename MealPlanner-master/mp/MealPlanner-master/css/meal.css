@@ -1,0 +1,103 @@
+* {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+	/*width: 750px;*/
+	margin: 0 auto;
+	/*margin-top: 20px;*/
+}
+
+header {
+	padding-bottom: 20px; 
+}
+
+section {
+	margin: 20px;
+} 	
+
+section.mp-dishes div.item{
+	width: 320px !important;
+	/*min-width: 100px !important;*/
+	min-height: 100px !important;
+	/*height: 200px;*/
+}
+	section.mp-dishes div.item div.left{
+		width: 40%;
+		float: left;
+		margin-right: 10px;
+	}
+		section.mp-dishes div.item div.left .button{
+			margin: 10px 0 5px 0;
+			width: 100%;
+		}
+
+	section.mp-dishes div.item div.content{
+		width: 55%;
+		float: left;
+		padding: 0 !important;
+		font-size: 0.9em !important;
+	}
+		section.mp-dishes div.item div.content .name{
+			word-wrap: break-word !important;
+		}
+		section.mp-dishes div.item div.content .description{
+			display: inline;
+			/*float: right;*/
+			text-align: left;
+		}
+
+	section.mp-dishes div.item div.pfc {
+		color: #CCC;
+		font-size: 0.85em;
+	}
+
+	section.mp-dishes div.ui.input input{
+		padding: 0.6em 1em !important;
+	}
+	section.mp-dishes div.ui.input i{
+		padding-top: 0.6em !important;
+	}
+
+	section.mp-dishes select,
+	section.mp-dishes div.ui.input input {
+		border: 1px solid #EEE !important;
+	}
+
+
+div.mp-settings div.input .inline{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: inline-block;
+}
+div.mp-settings div.input span {
+	width: 145px !important;
+	float: left;
+}
+div.mp-settings div.input input{
+	width: 40% !important;
+	padding: 0.4em !important;
+	float: right;
+}
+
+div.mp-settings div.input div.slider div.checkbox{
+	/*width: 40% !important;*/
+	float: right;
+}
+
+div.mp-settings div.message{
+	padding: 0.5em !important;
+}
+
+.filter{
+	padding-left: 10px;
+}
+
+.error {
+	color: #D95C5C;
+}
+
+.calendar .datepicker {
+	margin: 0 auto;
+	padding-top: 10px;
+}

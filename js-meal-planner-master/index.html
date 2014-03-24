@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Plan a meal</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+
+</head>
+
+<body>
+<div class="wrapper">
+    <h1 class="hdg-a">Drag and Drop meals to get started</h1>
+    <!-- below to be used once the local storage is added in. -->
+    <a id="save" href="#">Save current state</a>
+    <a id="clear" href="#">Clear</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Recipe List</h2>
+    <div class="grid">
+        <div class="grid-col grid-three">
+            <ul id="recipeList-main" class="v-list recipeList">
+        
+            </ul>
+        </div>
+        <div class="grid-col grid-three">
+            <ul id="recipeList-side" class="v-list recipeList">
+        
+            </ul>
+        </div>
+        <div class="grid-col grid-three">
+            <ul id="recipeList-dessert" class="v-list recipeList">
+        
+            </ul>
+        </div>
+    </div> <!-- /grid -->
+</div>
+<script src="recipes.js"></script>
+<script src="dragdrop.js"></script>
+</body>
+</html>
