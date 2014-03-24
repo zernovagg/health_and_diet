@@ -6,6 +6,10 @@
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
     <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="icon" href="o.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="o.ico" type="image/x-icon">
+
     <style>
         .task-success {
             background-color: #dff0d8;
@@ -13,64 +17,130 @@
     </style>
 </head>
 <body>
-     <table class="table">
+<br>
+<h1 class="no_margin logo font_hotel"> Health & Diet<i class="icon-leaf"></i></h1>
+<h4 class="advice"> no drugs.use drag and drop. <h4>
+
+<div class="mywrapper">
+<div class="leftcol">
+<h2 class="no_margin logo font_hotel" style="font-size: 25px;"> Recipe List <i class="icon-leaf"></i></h2>
+	<br>
+
+	<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Main</a></li>
+  <li><a href="#profile" data-toggle="tab">Side</a></li>
+  <li><a href="#messages" data-toggle="tab">Dessert</a></li>
+  
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+  <ul id="recipeList-main" class="v-list recipeList" data-bind="foreach: dishes" >
+		 <!-- ko if: meal().type == 'main' -->
+        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' "> </li>
+	    <!-- /ko -->
+            </ul>
+	</div>
+  <div class="tab-pane" id="profile">
+   <ul id="recipeList-side" class="v-list recipeList" data-bind="foreach: dishes">
+			
+      
+		
+		
+		 <!-- ko if: meal().type == 'side' -->
+        <li draggable="true" class="list-item" data-bind="text: meal().name + ' '"> </li>
+	    <!-- /ko -->
+		
+            </ul>
+  
+  
+  </div>
+  <div class="tab-pane" id="messages">
+   <ul id="recipeList-dessert" class="v-list recipeList" data-bind="foreach: dishes">
+       		
+		 <!-- ko if: meal().type == 'dessert' -->
+        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' "> </li>
+	    <!-- /ko -->
+   </ul>
+  </div>
+
+</div>
+	
+	
+
+
+
+
+</div>
+<div class="rightcol">
+<br><br><br>
+ <table class="table">
         <thead>
             <tr>
-                <th>Breakfast</th>
-                <th>Dinner</th>
-                <th>Supper</th>
+                <th><h2 class="font_th"> Breakfast <i class="icon-leaf"></i></h2></th>
+               
                
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td></td>
-                <td></td>
-                <td></td>
+              
              
             </tr>
         </tbody>
     </table>
-     <h2>Recipe List</h2>
-    <div class="grid">
-        <div class="grid-col grid-three">
-            <ul id="recipeList-main" class="v-list recipeList" data-bind="foreach: dishes" >
-		 <!-- ko if: meal().type == 'main' -->
-        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' + meal().type"> </li>
-	    <!-- /ko -->
-            </ul>
-        </div>
-        <div class="grid-col grid-three">
-            <ul id="recipeList-side" class="v-list recipeList" data-bind="foreach: dishes">
-			
-      
-		
-		
-		 <!-- ko if: meal().type == 'side' -->
-        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' + meal().type"> </li>
-	    <!-- /ko -->
-		
-            </ul>
-        </div>
-        <div class="grid-col grid-three">
-            <ul id="recipeList-dessert" class="v-list recipeList" data-bind="foreach: dishes">
-       		
-		 <!-- ko if: meal().type == 'dessert' -->
-        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' + meal().type"> </li>
-	    <!-- /ko -->
-            </ul>
-        </div>
-    </div> <!-- /grid -->
+	
+	 <table class="table">
+        <thead>
+            <tr>
+                  <th><h2 class="font_th" style="text-align:left;"> Dinner <i class="icon-leaf"></i></h2></th>
+               
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+              
+             
+            </tr>
+        </tbody>
+    </table>
+	 <table class="table">
+        <thead>
+        
+               
+                <th><h2 class="font_th"> Supper <i class="icon-leaf"></i></h2></th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+              
+             
+            </tr>
+        </tbody>
+    </table>
+	
+
+</div>
+
+    
+	<div style="clear:both;">
 	
 	
 
 	
 	
 	
+	</div>
 	
+	</div>
 	
-	
-	
+	<h4 class="advice" style="margin: 25px auto;"> Bionic University <h4>
 	
 	
   <!--	<script src="scripts/recipes.js"></script>--->

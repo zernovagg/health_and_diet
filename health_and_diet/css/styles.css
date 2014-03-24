@@ -65,9 +65,60 @@ body {
 
 .wrapper {
     width: 1200px;
-    margin: 50px auto;
+    margin: 25px auto;
+}
+.mywrapper {
+    width: 1000px;
+	min-height: 500px;
+	padding: 20px 40px;
+    margin: 2% auto;
+    background: linear-gradient(to right, rgba(0,140,250,0.8), rgba(33,483,18,0.5));
+	border-top-left-radius: 20px;
+border-top-right-radius: 0;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 0;
 }
 
+.advice{
+
+font-size: 12px;
+letter-spacing: 5px;
+text-align: center;
+color: rgba(0,85,456,1);
+
+}
+.leftcol{
+float:left;
+width: 48%;
+}
+.rightcol{
+float:right;
+width: 48%;
+}
+
+.font_hotel {
+font-family: 'Lobster Two', cursive;
+font-size: 3em;
+text-align: center;
+color: rgba(186,379,256,0.9);
+}
+
+.menu{
+font-family: 'Lobster Two', cursive;
+font-size: 2.5em;
+text-align: right;
+color: rgba(186,379,256,0.9);
+}
+
+.font_th{
+font-family: 'Lobster Two', cursive;
+font-size: 3em;
+text-align: center;
+color: rgba(186,379,256,0.9);
+font-size: 20px; 
+text-align: right; 
+padding: 0 15px;
+}
 
 /* --------------------------------------------
     Headings
@@ -86,20 +137,33 @@ body {
 .table {
     width: 100%;
     margin-bottom: 30px;
+	 margin-top: 30px;
 }
 
-.table th {
-    font-weight: bold;
-}
 
-.table th,
+
+.table th{
+padding: 8px;
+background: linear-gradient(to right, rgba(0,140,250,0.8), rgba(33,483,18,0.5));
+   
+border-top-left-radius: 15px;
+border-top-right-radius: 0;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 0;
+
+}
 .table td {
     padding: 8px;
-    border: 1px solid #333333;
+	background: #fff;
+   
+border-top-left-radius: 15px;
+border-top-right-radius: 0;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 0;
 }
 
 .table td {
-    height: 100px;
+    height: 200px;
 }
 
 .red {
@@ -144,14 +208,14 @@ body {
 }
 
 .recipeList > li {
-    padding: 8px 5px;
-    color: #ffffff;
-    background-color: #666666;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 11px;
-    width: 50%;
-    border: 1px solid #ffffff;
+  padding: 8px 11px;
+color: #ffffff;
+background:  linear-gradient(to right, rgba(0,140,250,0.8), rgba(33,483,18,0.5));
+text-align: left;
+border-radius: 8px;
+font-size: 15px;
+width: 55%;
+border: 1px solid #ffffff;
 }
 
 *[draggable=true] {
