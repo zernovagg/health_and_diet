@@ -34,41 +34,35 @@
      <h2>Recipe List</h2>
     <div class="grid">
         <div class="grid-col grid-three">
-            <ul id="recipeList-main" class="v-list recipeList" >
-        <li draggable="true" class="list-item" > </li>
-	
+            <ul id="recipeList-main" class="v-list recipeList" data-bind="foreach: dishes" >
+		 <!-- ko if: meal().type == 'main' -->
+        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' + meal().type"> </li>
+	    <!-- /ko -->
             </ul>
         </div>
         <div class="grid-col grid-three">
-            <ul id="recipeList-side" class="v-list recipeList">
-        <li draggable="true" class="list-item">roasted brussel sprouts</li>
-		<li draggable="true" class="list-item">roasted brussel sprouts</li>
+            <ul id="recipeList-side" class="v-list recipeList" data-bind="foreach: dishes">
+			
+      
+		
+		
+		 <!-- ko if: meal().type == 'side' -->
+        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' + meal().type"> </li>
+	    <!-- /ko -->
+		
             </ul>
         </div>
         <div class="grid-col grid-three">
-            <ul id="recipeList-dessert" class="v-list recipeList">
-        <li draggable="true" class="list-item">apple pie</li>
-		<li draggable="true" class="list-item">apple pie</li>
+            <ul id="recipeList-dessert" class="v-list recipeList" data-bind="foreach: dishes">
+       		
+		 <!-- ko if: meal().type == 'dessert' -->
+        <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' + meal().type"> </li>
+	    <!-- /ko -->
             </ul>
         </div>
     </div> <!-- /grid -->
 	
 	
-	<h2>Your seat reservations</h2>
-
-<table>
-    <thead><tr>
-        <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
-    </tr></thead>
-    <tbody data-bind="foreach: seats">
-        <tr>
-            <td data-bind="text: name +' '+ meal().name"></td>
-            <td data-bind="text: meal().name"></td>
-            <td data-bind="text: meal().type"></td>
-        </tr>    
-    </tbody>
-</table>
-
 
 	
 	
@@ -80,7 +74,7 @@
 	
 	
   <!--	<script src="scripts/recipes.js"></script>--->
- <script src="scripts/dragdrop.js"></script>
+
 	
 	
    
@@ -98,14 +92,14 @@
 <script>
 
 
-function SeatReservation(name, initialMeal) {
+function Meals(initialMeal) {
     var self = this;
-    self.name = name;
+   
     self.meal = ko.observable(initialMeal);
 }
 
 // Overall viewmodel for this screen, along with initial state
-function ReservationsViewModel() {
+function MealsViewModel() {
     var self = this;
 
     // Non-editable catalog data - would come from the server
@@ -150,16 +144,16 @@ function ReservationsViewModel() {
 	for (var i in self.availableMeals){
 	
 	
-       var item = new SeatReservation("Steve", self.availableMeals[i]);
+       var item = new Meals(self.availableMeals[i]);
 	   self.arrayOfMeals.push(item);
 		
 
     }
 	
-    self.seats = ko.observableArray(self.arrayOfMeals);
+    self.dishes = ko.observableArray(self.arrayOfMeals);
 }
 
-ko.applyBindings(new ReservationsViewModel());
+ko.applyBindings(new MealsViewModel());
 
 
 
@@ -169,6 +163,7 @@ ko.applyBindings(new ReservationsViewModel());
 
 
 </script>
+ <script src="scripts/dragdrop.js"></script>
 </body>
 </html>
 
