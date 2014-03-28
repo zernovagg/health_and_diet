@@ -47,9 +47,9 @@
 	    	<h4 class="">Settings for day</h4>
 	    	<div class="yellow ui message">
 		    	<small>
-		    	Белки:<span data-bind="text: left.protein"></span>,
-		    	Жиры:<span data-bind="text: left.fats"></span>,
-		    	Угл.:<span data-bind="text: left.carbohydrate"></span>
+		    	Proteins:<span data-bind="text: left.protein"></span>,
+		    	Fats:<span data-bind="text: left.fats"></span>,
+		    	Carbohydr.:<span data-bind="text: left.carbohydrate"></span>
 		    	</small>
 	    	</div>
 	    	<div class="ui input">
@@ -82,13 +82,13 @@
 		<table class="ui table segment">
 			<thead>
 				<tr>
-					<th class="one wide column">Время</th>
-					<th class="four wide column">Наименование</th>
-					<th class="five wide column">Компоненты</th>
-					<th class="one wide column">Белки</th>
-					<th class="one wide column">Жиры</th>
-					<th class="one wide column">Углеводы</th>
-					<th class="one wide column">Ккал</th>
+					<th class="one wide column">Time</th>
+					<th class="four wide column">Name</th>
+					<th class="five wide column">Ingridients</th>
+					<th class="one wide column">Total Protein</th>
+					<th class="one wide column">Total Fat</th>
+					<th class="one wide column">Carbohydrates</th>
+					<th class="one wide column">Calories</th>
 					<th class="one wide column"></th>
 				</tr>
 			</thead>
@@ -151,12 +151,14 @@
 				</div>
 				<div class="content">
 					<div class="name" data-bind="text: name"></div>
-					<span class="description" data-bind="foreach: components">
-						<span data-bind="text: $data"></span>
-					</span>
-					<div class="pfc">Белки: <span data-bind="text: protein"></span></div>
-					<div class="pfc">Жиры: <span data-bind="text: fats"></span></div>
-					<div class="pfc">Углеводы: <span data-bind="text: carbohydrate"></span></div>
+					(<span class="description" data-bind="foreach: components">
+						<span data-bind="text: $data"></span>&nbsp;
+					</span>)
+				
+					<div class="pfc">Total Protein: <span data-bind="text: protein"></span></div>
+					<div class="pfc">Total Fat: <span data-bind="text: fats"></span></div>
+					<div class="pfc">Carbohydrates: <span data-bind="text: carbohydrate"></span></div>
+					<div class="pfc">Calories: <span data-bind="text: kcal"></span></div>
 					<div class="error" data-bind="if: $root.allowed('protein', protein) 
 									|| $root.allowed('fats', fats) 
 									|| $root.allowed('carbohydrate', carbohydrate)">

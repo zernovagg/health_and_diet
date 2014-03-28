@@ -25,6 +25,14 @@
 <div class="leftcol">
 <h2 class="no_margin logo font_hotel" style="font-size: 25px;"> Recipe List <i class="icon-leaf"></i></h2>
 	<br>
+	
+	  
+ <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Type a part of task title" data-bind="value: filter, valueUpdate: 'afterkeydown'" />
+</div>
+
+<br>
 
 	<ul class="nav nav-tabs">
   <li class="active"><a href="#home" data-toggle="tab">Main</a></li>
@@ -37,9 +45,11 @@
 <div class="tab-content">
   <div class="tab-pane active" id="home">
   <ul id="recipeList-main" class="v-list recipeList" data-bind="foreach: dishes" >
+		 	    <!-- ko Foreach: filteredDishes -->
 		 <!-- ko if: meal().type == 'main' -->
         <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' "> </li>
 	    <!-- /ko -->
+		<!-- /ko -->
             </ul>
 	</div>
   <div class="tab-pane" id="profile">
@@ -221,31 +231,33 @@ function MealsViewModel() {
     }
 	
     self.dishes = ko.observableArray(self.arrayOfMeals);
+		self.filter = ko.observable('');
+		
+		self.filteredDishes = ko.computed(function () {
+        var filter = self.filter().trim();
+
+        if (filter.length < 1) {
+            return self.dishes();
+        }
+
+        var result = [];
+
+        _.each(self.dishes(), function (item) {
+            if (item.meal().name.indexOf(filter) > -1) {
+                result.push(item);
+            }
+        });
+
+        return result;
+
+    });
+		
 }
 
 ko.applyBindings(new MealsViewModel());
 
 
-$.getJSON('dishes.json', function(data) {
 
- var items = [];
-
- $.each(data, function() {
- var self = this;
- $.each(self, function(key, val) {
-   items.push('<li id="' + key + '">' + val + '</li>');
-})
- });
-
- $('<ul/>', {
-
-   'class': 'my-new-list',
-
-   html: items.join('')
-
- }).appendTo('body');
-
-});
 
 
 
@@ -259,146 +271,4 @@ $.getJSON('dishes.json', function(data) {
 
 
 
-
-<!---
-
-
-self.availableReciepies = [{
-	name: "Борщ",
-	type: "суп",
-	components: ["картофель", "капуста", "фасоль", "мясо"],
-	protein: 2.0,
-	fats: 1.4,
-	carbohydrate: 3.3,
-	kcal: 32.0
-}, {
-	name: "Суп гороховый",
-	type: "суп",
-	components: ["картофель", "горох", "зелень"],
-	protein: 4.4,
-	fats: 2.4,
-	carbohydrate: 8.9,
-	kcal: 66.0
-}, {
-	name: "Суп грибной",
-	type: "суп",
-	components: ["картофель", "грибы", "зелень"],
-	protein: 1.3,
-	fats: 1.8,
-	carbohydrate: 1.3,
-	kcal: 26.0
-}, {
-	name: "Суп овощной",
-	type: "суп",
-	components: ["картофель", "овощи", "зелень"],
-	protein: 1.4,
-	fats: 1.1,
-	carbohydrate: 4.3,
-	kcal: 28.0
-}, {
-	name: "Макароны",
-	type: "гарнир",
-	components: ["макароны"],
-	protein: 3.3,
-	fats: 0.7,
-	carbohydrate: 22.3,
-	kcal: 103.0
-}, {
-	name: "Картошка жареная",
-	type: "гарнир",
-	components: ["картофель", "лук"],
-	protein: 2.1,
-	fats: 8.3,
-	carbohydrate: 17.0,
-	kcal: 154.7
-}, {
-	name: "Картошка фри",
-	type: "гарнир",
-	components: ["картофель"],
-	protein: 3.3,
-	fats: 15.0,
-	carbohydrate: 42.8,
-	kcal: 303.0
-}, {
-	name: "Плов с грибамми",
-	type: "каша",
-	components: ["рис", "грибы", "мясо"],
-	protein: 3.1,
-	fats: 2.9,
-	carbohydrate: 19.6,
-	kcal: 119.0
-}, {
-	name: "Гречневая каша",
-	type: "каша",
-	components: ["гречка"],
-	protein: 5.9,
-	fats: 1.6,
-	carbohydrate: 80.3,
-	kcal: 163.0
-}, {
-	name: "Рис рассыпчатый",
-	type: "каша",
-	components: ["рис"],
-	protein: 2.4,
-	fats: 0.2,
-	carbohydrate: 24.9,
-	kcal: 113.0
-},
-{
-	name: "Голубцы",
-	type: "второе",
-	components: ["капуста", "рис", "мясо"],
-	protein: 8.0,
-	fats: 2.5,
-	carbohydrate: 9.3,
-	kcal: 124.4
-},
-{
-	name: "Яичница",
-	type: "второе",
-	components: ["яйца", "молоко"],
-	protein: 9.8,
-	fats: 8.7,
-	carbohydrate: 0.5,
-	kcal: 119.0
-},
-{
-	name: "Ризотто с мясом",
-	type: "второе",
-	components: ["макароны", "мясо", "зелень"],
-	protein: 6.6,
-	fats: 10.0,
-	carbohydrate: 18.3,
-	kcal: 185.0
-},
-{
-	name: "Манная каша",
-	type: "каша",
-	components: ["манка", "молоко"],
-	protein: 3.0,
-	fats: 3.2,
-	carbohydrate: 15.8,
-	kcal: 98.0
-},
-{
-	name: "Салат пражский",
-	type: "салат",
-	components: ["хз"],
-	protein: 9.6,
-	fats: 15.0,
-	carbohydrate: 20.3,
-	kcal: 140.0
-},
-{
-	name: "Салат фруктовый",
-	type: "салат",
-	components: ["фрукты"],
-	protein: 6.6,
-	fats: 10.0,
-	carbohydrate: 18.3,
-	kcal: 185.0
-}];
-	
-
--->
 

@@ -57,17 +57,13 @@
   
   <ul id="recipeList-main" class="v-list recipeList" data-bind="foreach: dishes" >
 
-		<!-- ko if: meal().type == 'main' -->
-		<!-- ko foreach: filteredDishes -->
+			 <!-- ko if: meal().type == 'side' -->
+		
         <li draggable="true" class="list-item" data-bind="text: meal().name + ' ' "> </li>
 	    <!-- /ko -->
-		 <!-- /ko -->
+
 		 
-		  <!-- ko if: filteredDishes().length == 0 -->
-            <div class="text-center">
-                <strong>No dishes muches current filter</strong>
-            </div>
-            <!-- /ko -->
+		 
             </ul>
 	</div>
   <div class="tab-pane" id="profile">
@@ -203,7 +199,7 @@ function MealsViewModel() {
     // Non-editable catalog data - would come from the server
     self.availableMeals = [
       
-		{ id: "1", name: "Chicken rice soup", type: "main", protein: 9.6, fats: 15.0, carbohydrate: 20.3, kcal: 140.0},
+		{ id: "1", name: "Chicken rice soup", type: "main"},
         { id: "2", name: "steaks", type: "main" },
         { id: "3", name: "apple pie", type: "dessert" },
         { id: "4", name: "roasted brussel sprouts", type: "side" },
@@ -234,39 +230,26 @@ function MealsViewModel() {
         { id: "29", name: "cous cous", type: "side" },
         { id: "30", name: "hamburgers", type: "side" },
         { id: "31", name: "roast cauliflower", type: "side" }
-    ];    
-
-    // Editable data
-	
-	self.arrayOfMeals = [];
-	for (var i in self.availableMeals){
-	
-	
-       var item = new Meals(self.availableMeals[i]);
-	   self.arrayOfMeals.push(item);
-		
-
-    }
-	
-    self.dishes = ko.observableArray(self.arrayOfMeals);
+    ];   
 	
 	
 	
 	
-}
-
- MealsViewModel.filter = ko.observable('');
-    MealsViewModel.filteredDishes = ko.computed(function () {
-        var filter = MealsViewModel.filter().trim();
+	self.dishes = ko.observableArray(self.fArrayOfMeals);
+	
+	self.filter = ko.observable('');
+	
+	self.filteredDishes = ko.computed(function () {
+        var filter = self.filter().trim();
 
         if (filter.length < 1) {
-            return MealsViewModel.dishes();
+            return self.dishes();
         }
 
         var result = [];
 
-        _.each(MealsViewModel.dishes(), function (item) {
-            if (item.name.indexOf(filter) > -1) {
+        _.each(self.dishes(), function (item) {
+            if (item.meal().name().indexOf(filter) > -1) {
                 result.push(item);
             }
         });
@@ -274,6 +257,31 @@ function MealsViewModel() {
         return result;
 
     });
+	
+
+    // Editable data
+	
+	
+	self.fArrayOfMeals = function(){
+	var arrayOfMeals = [];
+	for (var i in self.availableMeals){
+	
+	
+       var item = new Meals(self.availableMeals[i]);
+	   arrayOfMeals.push(item);
+		
+
+    }
+	return arrayOfMeals;
+	};
+
+	
+
+	
+	
+}
+
+ 
 
 ko.applyBindings(new MealsViewModel());
 
