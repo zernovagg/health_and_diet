@@ -1,7 +1,7 @@
 function Data(){
 var json = [{
 	"name": "Skinny Soup",
-	"img": "css/img/photo2.jpg",
+	
 	"type": "Main Dish, Soup",
 	"components": ["beef broth,",
 	"tomato (with juice),",
@@ -24,7 +24,7 @@ var json = [{
 
 {
 	"name": "Broccoli Cheese Soup",
-	"img": "css/img/photo2.jpg",
+	
 	"type": "Main Dish, Soup",
 	"components": ["broccoli cut into bite sized pieces,",
 	"chicken bouillon cube,",
@@ -41,7 +41,7 @@ var json = [{
 
 {
 	"name": "Chicken Chili",
-	"img": "css/img/photo2.jpg",
+	
 	"type": "Main Dish, Soup",
 	"components": ["Chicken breasts,",
 	"large onion,",
@@ -61,7 +61,7 @@ var json = [{
 
 {
 	"name": "Gazpacho",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Main Dish, Soup",
 	"components": ["large red bell pepper,",
 	"large tomatoes or 6 plum tomatoes,",
@@ -81,7 +81,7 @@ var json = [{
 
 {
 	"name": "Carrot and Coriander Soup",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Vegetables, Soup",
 	"components": ["onion, sliced",
 	"carrots,",
@@ -98,7 +98,7 @@ var json = [{
 
 {
 	"name": "African Peanut and Sweet Potato Soup",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Main Dish, Soup",
 	"components": [
 	"coconut oil,",
@@ -124,7 +124,7 @@ var json = [{
 
 {
 	"name": "Israeli Salad",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Salads",
 	"components": ["cucumbers,",
 	"tomatoes",
@@ -139,7 +139,7 @@ var json = [{
 
  {
 	"name": "Southwestern Egg Salad",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Salads",
 	"components": ["hard-boiled eggs,",
 	"egg whites,",
@@ -160,7 +160,7 @@ var json = [{
 
 {
 	"name": "Chicken Curry Salad",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Salads",
 	"components": ["low fat cottage cheese,",
 	"curry powder,",
@@ -178,7 +178,7 @@ var json = [{
 
 {
 	"name": "Crab Cakes",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Appetizers",
 	"components": ["Kemp Crab,",
 	"egg whites",
@@ -195,7 +195,7 @@ var json = [{
 
 {
 	"name": "Classic Caponata",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Appetizers",
 	"components": ["olive oil,",
 	"eggplant,", 
@@ -214,7 +214,7 @@ var json = [{
 
 {
 	"name": "Peach Yoghurt Fizz",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Appetizers",
 	"components": ["sliced peaches,",
 	"vanilla yogurt,",
@@ -229,7 +229,7 @@ var json = [{
 
 {
 	"name": "Sausage, Mushroom and Broccoli Quiche",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Side Dish",
 	"components": ["egg whites,",
 	"cottage cheese,",
@@ -249,7 +249,7 @@ var json = [{
 
 {
 	"name": "Pumpkin Pie",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Dessert",
 	"components": ["splenda,",
 	"cornstarch,",
@@ -267,7 +267,7 @@ var json = [{
 
 {
 	"name": "Pancakes",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Dessert",
 	"components": ["flour,",
 	"salt,",
@@ -284,7 +284,7 @@ var json = [{
 
 {
 	"name": "Tofu Chocolate Mousse",
-	"img": "css/img/photo2.jpg",
+
 	"type": "Dessert",
 	"components": ["tofu,",
 	"honey,",
