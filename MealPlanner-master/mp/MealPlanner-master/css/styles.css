@@ -136,6 +136,7 @@ padding: 0 15px;
 -----------------------------------------------*/
 
 .table {
+color: rgb(0,85,456);
     width: 100%;
     margin-bottom: 30px;
 	 margin-top: 30px;
@@ -156,15 +157,11 @@ border-bottom-left-radius: 0;
 .table td {
     padding: 8px;
 	background: #fff;
-   
-border-top-left-radius: 15px;
-border-top-right-radius: 0;
-border-bottom-right-radius: 15px;
-border-bottom-left-radius: 0;
+
 }
 
 .table td {
-    height: 200px;
+    height: 20px;
 }
 
 .red {

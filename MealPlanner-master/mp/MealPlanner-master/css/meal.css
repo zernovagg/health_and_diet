@@ -69,42 +69,38 @@ border: 1px solid #ffffff;
 	}
 
 
-	div.mp-settings{
-	float: right;
-	width: 45%;
-	}
+
 	
-div.mp-settings div.input .inline{
-	padding-top: 5px;
-	padding-bottom: 5px;
-	display: inline-block;
-}
+
 div.mp-settings div.input span {
 	width: 145px !important;
 	float: left;
 }
-div.mp-settings div.input input{
-	width: 40% !important;
-	padding: 0.4em !important;
-	float: right;
-}
 
-div.mp-settings div.input div.slider div.checkbox{
-	/*width: 40% !important;*/
-	float: right;
-}
+
+
 
 div.mp-settings div.message{
 	padding: 0.5em !important;
 }
 
+
+
 .right-panel{
 float: right;
-width: 45%;
+width: 43%;
+padding: 10px 0
 }
 .left-panel{
 float: left;
 width: 45%;
+}
+
+.limitinput{
+line-height: 110%;
+padding: 0;
+margin:0;
+
 }
 
 .filter{
@@ -116,6 +112,10 @@ width: 45%;
 	padding: 3px 3px;
 	font-size: 18px;
 	color: #CA1414;
+}
+
+.calendar{
+margin: 110px 0 25px 0;
 }
 
 .calendar .datepicker {
