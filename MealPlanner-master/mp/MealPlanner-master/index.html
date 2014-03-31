@@ -167,15 +167,7 @@
 		<h3 class="ui purple label" style="min-width: 144px;" data-bind="text: selectedDate"></h3>
 		<table class="table" width="100%;">
 			<thead>
-			<tr>
-					
-					<td width="150px;">Name</th>
-					<td>Protein</td>
-					<td>Fat</td>
-					<td>Carbohydr.</td>
-					<td>Calories</td>
-					<td></td>
-				</tr>
+	
 			</thead>
 			<tbody >
 			
@@ -185,14 +177,14 @@
 				
 				<!-- ko foreach: filteredRation -->
 					<!-- ko if: time == "Breakfast" -->
-				<tr>
+				<tr >
 				
 					<td data-bind="text: name"></td>
-					<td data-bind="text: protein"></td>
-					<td data-bind="text: fats"></td>
-					<td data-bind="text: carbohydrate"></td>
-					<td data-bind="text: kcal"></td>
-					<td><button class="mini ui button" data-bind="click: $root.delDish"><i class="icon-remove"></i></button></td>
+					<td data-bind="text:'P: ' + protein" style="font-size: 12px;"> </td>
+					<td data-bind="text:'F: '+ fats" style="font-size: 12px;"></td>
+					<td data-bind="text:'C-h.: '+ carbohydrate" style="font-size: 12px;"></td>
+					<td data-bind="text:'Kcal: '+ kcal" style="font-size: 12px;"></td>
+					<td><button class="mini ui button" data-bind="click: $root.delDish" style="font-size: 12px;"><i class="icon-remove"></i></button></td>
 				</tr>
 				
 				
@@ -205,14 +197,14 @@
 			
 				<!-- ko foreach: filteredRation -->
 				<!-- ko if: time == "Dinner" -->
-				<tr>
+				<tr >
 				
 					<td data-bind="text: name"></td>
-					<td data-bind="text: protein"></td>
-					<td data-bind="text: fats"></td>
-					<td data-bind="text: carbohydrate"></td>
-					<td data-bind="text: kcal"></td>
-					<td><button class="mini ui button" data-bind="click: $root.delDish"><i class="icon-remove"></i></button></td>
+					<td data-bind="text:'P: ' + protein" style="font-size: 12px;"> </td>
+					<td data-bind="text:'F: '+ fats" style="font-size: 12px;"></td>
+					<td data-bind="text:'C-h.: '+ carbohydrate" style="font-size: 12px;"></td>
+					<td data-bind="text:'Kcal: '+ kcal" style="font-size: 12px;"></td>
+					<td><button class="mini ui button" data-bind="click: $root.delDish" style="font-size: 12px;"><i class="icon-remove"></i></button></td>
 				</tr>
 				
 				
@@ -225,14 +217,14 @@
 				 
 				<!-- ko foreach: filteredRation -->
 				<!-- ko if: time == "Supper" -->
-				<tr>
+				<tr >
 				
 					<td data-bind="text: name"></td>
-					<td data-bind="text: protein"></td>
-					<td data-bind="text: fats"></td>
-					<td data-bind="text: carbohydrate"></td>
-					<td data-bind="text: kcal"></td>
-					<td><button class="mini ui button" data-bind="click: $root.delDish"><i class="icon-remove"></i></button></td>
+					<td data-bind="text:'P: ' + protein" style="font-size: 12px;"> </td>
+					<td data-bind="text:'F: '+ fats" style="font-size: 12px;"></td>
+					<td data-bind="text:'C-h.: '+ carbohydrate" style="font-size: 12px;"></td>
+					<td data-bind="text:'Kcal: '+ kcal" style="font-size: 12px;"></td>
+					<td><button class="mini ui button" data-bind="click: $root.delDish" style="font-size: 12px;"><i class="icon-remove"></i></button></td>
 				</tr>
 				
 				
@@ -244,6 +236,9 @@
 				
 			</tbody>
 			<tfoot>
+			<tr>
+					<th class="one wide column" colspan="7"><h2 class="font_th" style="text-align:center;">Total<i class="icon-leaf"></i></h2></th>
+				</tr>
 				<tr>
 					<td class="one wide column">Total: <span data-bind="text: filteredRation().length"></span> </td>
 				
