@@ -8,16 +8,16 @@ function RationViewModel(){
 
 	var total = {
 		protein: ko.computed(function() {
-			return getSum(addedDishes(), 'protein', selectedDate()).toFixed(2);
+			return getSum(addedDishes(), 'protein', selectedDate());
 		}),
 		fats: ko.computed(function() {
-			return getSum(addedDishes(), 'fats', selectedDate()).toFixed(2);
+			return getSum(addedDishes(), 'fats', selectedDate());
 		}),
 		carbohydrate: ko.computed(function() {
-			return getSum(addedDishes(), 'carbohydrate', selectedDate()).toFixed(2);
+			return getSum(addedDishes(), 'carbohydrate', selectedDate());
 		}),
 		kcal: ko.computed(function() {
-			return getSum(addedDishes(), 'kcal', selectedDate()).toFixed(2);
+			return getSum(addedDishes(), 'kcal', selectedDate());
 		})
 	};
 

@@ -9,7 +9,7 @@ function DishesViewModel(){
 	var choose = {
 		components: ko.observableArray(),
 		types: ko.observableArray(),
-		time: ko.observableArray(['Breakfast', 'Dinner', 'Supper'])
+		time: ko.observableArray(['Breakfest', 'Dinner', 'Supper'])
 	};
 
 	var filter = {
